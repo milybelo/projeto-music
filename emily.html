@@ -1,48 +1,55 @@
- <!DOCTYPE html>
- <html>
-    <head>
-        <meta charsete="UTF-8">
-        <title>produtos - music play</title>
- 
-        <link rel="stylesheet" href="reset.css">
-        <link rel="stylesheet" href="produtos.css">
-    </head>
-    <body>
-        <header>
-         <div class="caixa">
-            <h1><img src="logo.png"></head>h1>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Website Design iFullStack.tv</title>
 
-          <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="produtos.html">Produtos</a></li>
-                    <li><a href="contato.html">Contato</a></li>
-                </ul>
-            </nav>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <img src="media/logo.png" class="logo">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">SPECIFICATIONS</a></li>
+                <li><a href="#">PRODUCTS</a></li>
+                <li><a href="#">CONNECT</a></li>
+            </ul>
         </div>
+        <div class="content">
+            <div class="left-col">
+                <h1>THE<br>REAL<br>SOUND</h1>
+            </div>
+            <div class="right-col">
+                <p>Click Here To Listen</p>
+                <img src="media/play.png" id="icon">
+            </div>
+        </div>
+    </div>
 
-    </header>
-    <main>
-        <ul class="produtos">
-            <li>
-                <h2>Aproveite 3 meses de Premium</R1></h2>
-                <img src="cabelo.jpg">
-                <p class="produto-descricao">Depois,apenas R$ 16,90/mês.Cancele quando quiser</p>
-                <p class="produto-preco">R$ 50,00</p>
-            </li>
-            <li>
-                <h2>Music free</h2>
-                <img src="barba.jpg">
-                <p class="produto-descricao">ordem aleatória</p>
-                <p class="produto-preco">R$ 00,00</p>
-            </li>
-            <li>
-                <h2>Music Premium apenas para etudantes</h2>
-                <img src="cabelo+barba.jpg">
-                <p class="produto-descricao">Sem propaganda, sem limites.Só música</p>
-                <p class="produto-preco">R$ 8,50</p>
-            </li>
-        </ul>
-    </main>
-  <body> 
- <html>   
+    <audio id="mySong">
+        <source src="media/song.mp3" type="audio/mp3">
+    </audio>
+
+    <script>
+        var mySong = document.getElementById("mySong");
+        var icon = document.getElementById("icon");
+
+        icon.onclick = function(){
+            if(mySong.paused){
+                mySong.play();
+                icon.src = "media/pause.png";
+            } else {
+                mySong.pause();
+                icon.src = "media/play.png";
+            }
+        }
+
+    </script>
+    
+</body>
+</html>
